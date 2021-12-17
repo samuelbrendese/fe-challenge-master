@@ -1,0 +1,433 @@
+html {
+	width: 100%;
+	height: auto;
+	overflow-x: hidden;
+	background-image: url(design/background.png);
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+}
+
+header {
+	width: auto;
+	height: auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Menu Bar (Logo, navigation, dropdown) */
+.top-nav {
+	width: 90%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+/* For logo div on upper left hand side of page */
+.top-nav-left {
+    margin: auto;
+    width: 10%;
+    height: auto;
+}
+
+/* Make logo a link to click on */
+.top-nav-left a {
+	font-family: Rockwell, Georgia, serif;
+	font-size: 1.5em;
+	color: white;
+}
+
+/* Horrizontal navigation on top middle section of the page*/
+.top-nav-center {
+    margin: auto;
+    width: 80%;
+    height: auto;
+    text-align: center;
+}
+
+/* Get rid of bullets for list*/ 
+.top-nav-center-list{
+	list-style-type: none;
+}
+
+.top-nav-center-list li{
+	display: inline;
+}
+
+/* Style Links */
+.top-nav-center a {
+	color: #ffffff;
+	margin: 25px;
+	font-size: 1.1em;
+	font-family: Geneva, Georgia, serif;
+	transition: 0.3s;
+	letter-spacing: 1px;
+}
+
+/* Fade on hover */
+.top-nav-center a:hover {
+	opacity: .20;
+}
+
+/* Dropdwon menu on upper right hand side */
+.top-nav-right {
+    margin: auto;
+    width: 10%;
+    height: auto;
+    text-align: right;
+    position: relative;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropmenu {
+  	position: relative;
+  	display: inline-block;
+}
+
+.ddicon {
+	padding: 12px 0px 0px 12px;
+  	border: none;
+  	cursor: pointer;
+  	width: 35px;
+  	height: 35px;
+}
+
+.ddicon:hover{
+	opacity: .7;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.hidden-menu {
+  	display: none;
+  	position: absolute;
+  	background-color: #A9A9A9;
+  	min-width: 100px;
+  	right: 0;
+  	box-shadow: 10px 5px 5px #000000;
+  	z-index: inherit;
+}
+
+/* Links inside the dropdown */
+.hidden-menu a {
+  	color: #ffffff;
+  	padding: 12px 16px;
+  	text-decoration: none;
+  	display: block;
+  	text-align: left;
+  	font-size: 1.1em;
+  	font-family: Geneva, Georgia, serif;
+  	right: 0;
+}
+
+/* Change color of dropdown links on hover */
+.hidden-menu a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show-menu {display:block;}
+
+/* Title Statement and sign up section, later splits into 2 inner divs and centers them */ 
+main {
+	width: 80%;
+	margin: auto;
+    height: auto;
+    display: flex;
+}
+
+/* 1st div, left container for title statement */
+.main-title{
+    text-align: left;
+    margin: 20px;
+    width: 50%;
+    height: auto;
+}
+
+/* Title statement styling */
+.main-title h1{
+	font-size: 3.75em;
+	font-family: "Franklin Gothic Medium", Helvetica, serif;
+	color: #ffffff;
+	margin-top: 125px;
+}
+
+/* Sub-title statement styling */
+.main-title p{
+	font-size: 1.25em;
+	font-family: Geneva, Georgia, serif;
+	color: #ffffff;
+	opacity: .7;
+}
+
+/* 2nd div, right container for sign up */
+.main-sign-up{
+    text-align: center;
+    margin: 20px;
+    width: 50%;
+    height: auto;
+    display: block;
+}
+
+/* Text that says "SIGN UP FOR FREE" */
+#above-note {
+	font-size: 1em;
+	font-family: Geneva, Georgia, serif;
+	color: #ffffff;
+	margin-top: 125px;
+	margin-bottom: 25px;
+	letter-spacing: 2px;
+
+}
+
+/* Sign up form */
+.sign-up-form{
+	width: 80%;
+	height: auto;
+	margin: auto;
+	text-align: center;
+	border-radius: 1%;
+	border-top: 2px solid rgba(255, 255, 255, .5);
+	border-right: 2px solid rgba(255, 255, 255, .5);
+	border-left: 2px solid rgba(255, 255, 255, .5);
+	border-bottom: none;
+}
+
+/* Inputs for form */
+.sign-up-form input{
+	height: 50px;
+	width: 100%;
+	display: block;
+	box-sizing: border-box;
+	background-color: #000000;
+	color: #ffffff;
+}
+
+/* Allows submit button to be styled differently */
+#name, #email, #password{
+	opacity: .3;
+}
+
+/* Adjust placeholder text */
+
+#name::placeholder, #email::placeholder, #password::placeholder{
+	color: #ffffff;
+	font-size: 1.15em;
+	font-family: Geneva, Georgia, serif;
+	text-indent: 12px;
+}
+
+#password {
+	border-bottom: none;
+}
+
+/* Blue submit button */
+#submit{
+	color: #ffffff;
+	background-color: #2C99ED;
+	border: none;
+	font-family: Geneva, Georgia, serif;
+}
+
+#submit:hover, #submit:focus{
+	cursor: pointer;
+	background-color: #4169E1;
+}
+
+/* Terms and conditions message underneath the form */
+#terms-msg{
+	margin-top: 25px;
+	font-family: Geneva, Georgia, serif;
+	color: #A9A9A9;
+	font-size: .8em;
+}
+
+/* Styles link for terms of service */
+.main-sign-up a{
+	font-family: Geneva, Georgia, serif;
+	color: #ffffff;
+	font-size: .8em;
+}
+
+.main-sign-up a:hover{
+	text-decoration: underline;
+}
+
+footer {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    display: flex;
+	margin-top: 180px;
+}
+
+.copyright{
+	width: 50%;
+	margin: auto;
+	text-align: left;
+}
+
+/* Styles copyright text */
+#copyright{
+	color: #ffffff;
+	font-family: Geneva, Georgia, serif;
+	font-size: .9em;
+}
+
+.bottom-nav {
+	width: 50%;
+	margin: auto;
+	text-align: right;
+	display: inline;
+}
+
+/* Spreads out list elements and lines them horrizontally */
+.bottom-nav a{
+	display: inline;
+	font-family: Geneva, Georgia, serif;
+	margin: 20px;
+	font-size: .9em;
+	color: #ffffff;
+	transition: .20s;
+	letter-spacing: 2px;
+}
+
+/* Fade animation for link hover */
+.bottom-nav a:hover{
+	opacity: .5;
+}
+
+.copyright-mobile{
+	display: none;
+}
+
+/* Mobile */
+@media screen and (max-width: 767px) {
+
+	html{
+		background: url(design/background.png) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+	/* Displays only the logo and dropdown for mobile format */
+	.top-nav-left{
+		width: 50%;
+	}
+
+	.top-nav-center{
+		display: none;
+	}
+
+	.top-nav-right{
+		 width: 50%;
+	}
+
+	/* Stacks the Title and sign uop form for mobile */
+	main {
+		display: block;
+	}
+
+	.main-title, .main-sign-up{
+		width: 90%;
+		margin: auto;
+	}
+
+	.main-title h1 {
+		font-size: 3em;
+	}
+
+	/* Places copyright on bottom, centers list vertically and stacks both divs on top of each other */
+
+	footer {
+		display: block;
+		margin-top: 135px;
+	}
+
+	.copyright{
+		display: none;
+	}
+
+	.copyright-mobile, .bottom-nav{
+		width: 100%;
+		margin: auto;
+		text-align: center;
+		display: block;
+	}
+
+	.bottom-nav a{
+		display: block;
+		margin: 40px 0px 40px 0px;
+	}
+
+	.copyright-mobile{
+		width: 100%;
+		margin: auto;
+		text-align: center;
+		display: block;
+		color: #ffffff;
+		font-family: Geneva, Georgia, serif;
+		font-size: .9em;
+		padding: 25px 0px 15px 0px;
+	}
+}
+
+/* Mid-size screen formatting */
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+	html{
+		background: url(design/background.png) no-repeat center center fixed; 
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+	.top-nav-left{
+		width: 50%;
+	}
+
+	.top-nav-center{
+		display: none;
+	}
+
+	.top-nav-right{
+		 width: 50%;
+	}
+
+	footer {
+		display: block;
+		margin-top: 135px;
+	}
+
+	.copyright{
+		display: none;
+	}
+
+	.copyright-mobile, .bottom-nav{
+		width: 100%;
+		margin: auto;
+		text-align: center;
+		display: block;
+	}
+
+	.bottom-nav a{
+		display: block;
+		margin: 40px 0px 40px 0px;
+	}
+
+	.copyright-mobile{
+		width: 100%;
+		margin: auto;
+		text-align: center;
+		display: block;
+		color: #ffffff;
+		font-family: Geneva, Georgia, serif;
+		font-size: .9em;
+		padding: 25px 0px 15px 0px;
+	}
+}

@@ -1,0 +1,157 @@
+<!doctype html>
+<html>
+<head>
+	<title>Stamp</title>
+	<meta name="description" content="Stamp landing page for Thesis FE-challenge master">
+	<meta name="keywords" content="Stamp Thesis">
+	<meta name="author" content="Samuel Brendese">
+	<link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+	<header>
+		<div class="top-nav">
+			<!-- Stamp Logo (upper left)-->
+			<div class="top-nav-left">
+				<h2><a href="#">Stamp</a></h2>
+			</div>
+			<!--Horrizontal menu on top-middle of page-->
+			<div class="top-nav-center">
+				<ul class="top-nav-center-list">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Integrations</a></li>
+					<li><a href="#">Pricing</a></li>
+					<li><a href="#">Contacts</a></li>
+				</ul>
+			</div>
+			<!--Dropdown section in top right-->
+			<div class=top-nav-right>
+				<div class="dropmenu">
+					<!--Dropdown icon runs function to toggle the dropdown menu when clicked on-->
+  					<img src="ddmenu.png" onclick="myFunction()" class="ddicon">
+					<!--Dropdown menu itself-->
+  					<div id="myDropdown" class="hidden-menu">
+    					<a href="#">About</a>
+    					<a href="#">Integrations</a>
+    					<a href="#">Pricing</a>
+    					<a href="#">Contacts</a>
+  					</div>
+  				</div>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<!--Opening/Title text-->
+		<div class="main-title">
+			<h1>Simple Way to<br> Organize Your<br> Inspirations</h1>
+			<p>I think what motivates people is not great hate,<br>but great love for other people.</p>
+		</div>
+		<!--Sign up form section-->
+		<div class="main-sign-up">
+			<p id="above-note">SIGN UP FOR FREE</p>
+			<!--Runs function when submitted to check for improper paramters and runs a GET method (to nowhere)-->
+			<form id="form" onsubmit="return runerrors()"action="#" method="GET" class="sign-up-form">
+				<input type="text" id="name" name="name" placeholder="Name">
+				<input type="email" id="email" name="email" placeholder="E-mail">
+				<input type="password" id="password" name="password" placeholder="Password"> 
+				<input type="submit" id="submit" value="Sign up  >">
+			</form>
+			<!--Terms and conditions text with empty link to terms/conditions-->
+			<p id="terms-msg">By clicking "Sign up" I agree to our<br></p>
+			<a href="#">Terms of Service.</a>
+		</div>
+	</main>
+
+	<footer>
+		<!--Copyright message and bottom menu-->
+		<div class="copyright">
+			<p id="copyright">© 2016 Stamp. All Rights Reserved</p>
+		</div>
+		<div class="bottom-nav">
+			<a href="#">CONTACT</a>
+			<a href="#">HELP</a>
+			<a href="#">TERMS OF USE</a>
+			<a href="#">PRIVACY POLICY</a>
+		</div>
+		<!--Visibility of copyright message switches upon resizing to maintain order of elements when on mobile-->
+		<div class="copyright-mobile">
+			<p id="copyright-mobile">©2016 Stamp. All Rights Reserved</p>
+		</div>
+	</footer>
+	
+
+	<!--JS Functions-->
+	<script>
+	/* - Run errors will check to see if the proper parameters were entered before submitting the form.
+	   - Ensures all 3 parameters have been entered, an email with the @ symbol is entered, 
+	   	 and a password longer than 6 characters is entered. */
+    function runerrors() {
+        var name = document.getElementById('name');
+        var email = document.getElementById('email');
+        var password = document.getElementById('password');
+        
+        if (name.value === "" || name.value == null) {
+            window.alert("Please enter your name.");
+            name.focus();
+            return false;
+        } 
+  
+        if (email.value === "" || email.value == null) {
+        	window.alert("Please enter a valid e-mail address.");
+            email.focus();
+            return false;
+        }
+  
+        if (password.value === "" || password.value == null) {
+            window.alert("Please enter your password");
+            password.focus();
+            return false;
+        }
+
+        if (password.value.length < 6){
+        	window.alert("Current password not long enough, please enter a longer one");
+        	password.focus();
+            return false;
+        }
+        return true;
+    }
+
+    /* When the dropdown menu button is clicked, the menu will
+	toggle between hiding and showing the dropdown content */
+	
+	function myFunction() {
+  		document.getElementById("myDropdown").classList.toggle("show-menu");
+	}
+
+	/* Close the dropdown menu if the user clicks outside of its area */
+		window.onclick = function(event) {
+  			if (!event.target.matches('.ddicon')) {
+    			var dropdowns = document.getElementsByClassName("hidden-menu");
+    			var i;
+    			for (i = 0; i < dropdowns.length; i++) {
+      				var openDropdown = dropdowns[i];
+
+      		if (openDropdown.classList.contains('show-menu')) {
+        		openDropdown.classList.remove('show-menu');
+    			}
+    		}
+  		}
+	}
+	
+	/* There were some issues getting the button in place that toggles the visibility of the password
+	  that the user enters. This function is not active but shows the logic for toggling the visibility of the
+	  user's password. The type of input will change upon clicking the icon, making it visible if type="text"
+	  and invisible if type="password", */
+	function togglePassword(){
+		let pwdInput = document.getElementById("password");
+			
+		if (pwdInput.type == "password"){
+			pwdInput.type == "text";
+		}
+		else {
+		pwdInput.type == "password";
+		}
+	}
+	</script>
+</html>
